@@ -1,13 +1,299 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "San Francisco" !important;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+  color: #252525;
+
+  padding: 48px 64px;
+}
+
+/* MAIN LAYOUT */
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 36px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ELEMENTS */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  padding-top: 4px;
+}
+
+h1 {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #434242;
+}
+
+.category {
+  margin-bottom: 16px;
+}
+
+.fact {
+  font-size: 16px;
+  line-height: 1.4;
+  background-color: #ffffff;
+  margin-bottom: 16px;
+  padding: 16px 24px;
+  border-radius: 4px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.fact > .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+}
+
+.tag {
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+  background-color: #e8e8e8;
+  color: #252525;
+}
+
+.vote-buttons {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.vote-buttons button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: #fff;
+  font-size: 14px;
+  padding: 6px 6px;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+ul.aside {
+  list-style: none;
+  display: inline-flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+ul li.category {
+  color: #a8a29e;
+  position: relative;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+ul li.category:hover {
+  cursor: pointer;
+}
+
+ul li.category::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0; /* Başlangıçta genişlik sıfır */
+  height: 2px;
+  background-color: #a8a29e;
+  transform-origin: bottom right;
+  transition: width 0.3s ease; /* Sadece genişlik üzerinde geçiş */
+  z-index: -1; /* Alt çizgiyi metnin altında tutmak için z-index */
+}
+
+ul li.category:hover::after {
+  cursor: pointer;
+  width: 100%; /* Hover olduğunda genişliği metnin uzunluğuna kadar genişlet */
+  transform-origin: bottom left;
+  z-index: -1; /* Hover durumunda z-index'i ayarlayın */
+}
+
+ul li.category.active {
+  color: #434242;
+}
+
+ul li.category.active::after {
+  display: none; /* Aktif olan öğenin alt çizgisini kaldırın */
+}
+
+.source:link,
+.source:visited {
+  color: #a8a29e;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.source:hover,
+.source:active {
+  color: #252525;
+}
+
+.btn {
+  border: none;
+  font-size: 16px;
+  padding: 10px 10px;
+  color: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.active {
+  background-color: #252525;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: rgb(234, 234, 234);
+}
+
+.btn-large {
+  font-size: 16px;
+  padding: 10px 10px;
+}
+
+.btn-submit {
+  font-size: 16px;
+  padding: 5px 5px;
+}
+
+.btn-all-categories {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.btn-post {
+  background-color: #434242;
+  color: #fff;
+}
+
+.btn-post:hover {
+  background-color: #504f4f;
+  color: #fff;
+}
+
+.btn-category {
+  width: 100%;
+  background-image: none;
+}
+
+.btn-category.active {
+  background-color: #252525;
+}
+
+/* FORM */
+.fact-form {
+  background-color: #fff;
+  margin-bottom: 40px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 4px;
+}
+
+.fact-form input,
+.fact-form select {
+  width: 160px;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px;
+  color: inherit;
+  font-family: inherit;
+}
+
+.fact-form input::placeholder {
+  color: #a8a29e;
+}
+
+.fact-form input:first-child {
+  flex-grow: 1;
+}
+
+.fact-form span {
+  color: #717171;
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 18px;
+}
+
+input[type="text"]:focus,
+:focus-visible {
+  outline: none;
+  border: 2px solid #c3c3c3;
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 48px;
+  }
+
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fact-form input,
+  .fact-form select {
+    width: auto;
+  }
 }
