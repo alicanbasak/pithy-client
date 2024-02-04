@@ -78,6 +78,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 24px;
+  box-shadow: 0px 0px 7px #e7e7e7;
 }
 
 .fact > .info {
@@ -208,7 +209,7 @@ ul li.category.active::after {
   padding: 10px 10px;
 }
 
-.btn-submit {
+.btn.submit {
   font-size: 16px;
   padding: 5px 5px;
 }
@@ -239,7 +240,6 @@ ul li.category.active::after {
 
 /* FORM */
 .fact-form {
-  /* background-color: #fff; */
   margin-bottom: 40px;
   padding: 4px 0px;
   display: flex;
@@ -273,6 +273,7 @@ ul li.category.active::after {
   color: inherit;
   font-family: inherit;
   border: 2px solid #fff;
+  box-shadow: 0px 0px 7px #e7e7e7;
 }
 
 .fact-form input::placeholder {
