@@ -72,7 +72,7 @@ h1 {
   margin-bottom: 16px;
 }
 
-.fact {
+.pith {
   font-size: 16px;
   line-height: 1.4;
   background-color: #ffffff;
@@ -86,7 +86,7 @@ h1 {
   box-shadow: 0px 0px 7px #e7e7e7;
 }
 
-.fact > .info {
+.pith > .info {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,7 +94,7 @@ h1 {
 }
 
 @media (max-width: 1200px) {
-  .fact {
+  .pith {
     flex-direction: column;
     align-items: flex-end;
     gap: 12px;
@@ -291,7 +291,7 @@ ul li.category.active::after {
   margin-bottom: 10px;
 }
 
-.fact-form {
+.pith-form {
   margin-bottom: 40px;
   padding: 4px 0px;
   display: flex;
@@ -300,7 +300,7 @@ ul li.category.active::after {
   border-radius: 4px;
 }
 
-.fact-section {
+.pith-section {
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -314,8 +314,8 @@ ul li.category.active::after {
   align-items: center;
 }
 
-.fact-form input,
-.fact-form select {
+.pith-form input,
+.pith-form select {
   width: 100%;
   background-color: #fff;
   border: none;
@@ -328,15 +328,15 @@ ul li.category.active::after {
   box-shadow: 0px 0px 7px #e7e7e7;
 }
 
-.fact-form input::placeholder {
+.pith-form input::placeholder {
   color: #a8a29e;
 }
 
-.fact-form input:first-child {
+.pith-form input:first-child {
   flex-grow: 1;
 }
 
-.fact-form span {
+.pith-form span {
   color: #717171;
   font-weight: 500;
   font-size: 16px;
@@ -357,13 +357,13 @@ input[type="text"]:focus,
     padding: 32px 48px;
   }
 
-  .fact-form {
+  .pith-form {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .fact-form input,
-  .fact-form select {
+  .pith-form input,
+  .pith-form select {
     width: auto;
   }
 }

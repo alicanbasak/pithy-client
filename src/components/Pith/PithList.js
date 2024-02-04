@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import SingleFact from "./SingleFact";
 import Categories from "./Categories";
+import SignlePith from "./SinglePith";
 
-const initialFacts = [
+const initialPiths = [
   {
     id: 1,
     categoryId: 1,
@@ -46,9 +46,9 @@ const initialFacts = [
   },
 ];
 
-const FactList = ({ status, categories }) => {
+const PithList = ({ status, categories }) => {
   const [activeCategory, setActiveCategory] = useState(1);
-  const [facts, setFacts] = useState([]);
+  const [piths, setPiths] = useState([]);
 
   const setActiveCategoryHandler = e => {
     setActiveCategory(e.target.value);
@@ -56,9 +56,9 @@ const FactList = ({ status, categories }) => {
 
   useEffect(() => {
     activeCategory === 0
-      ? setFacts(initialFacts)
-      : setFacts(
-          initialFacts.filter(fact => fact.categoryId === activeCategory)
+      ? setPiths(initialPiths)
+      : setPiths(
+          initialPiths.filter(pith => pith.categoryId === activeCategory)
         );
   }, [activeCategory]);
 
@@ -71,8 +71,8 @@ const FactList = ({ status, categories }) => {
       />
       <section>
         <ul>
-          {facts.map(fact => (
-            <SingleFact key={fact.id} fact={fact} categories={categories} />
+          {piths.map(pith => (
+            <SignlePith key={pith.id} pith={pith} categories={categories} />
           ))}
         </ul>
       </section>
@@ -80,4 +80,4 @@ const FactList = ({ status, categories }) => {
   );
 };
 
-export default FactList;
+export default PithList;

@@ -2,10 +2,10 @@ import React from "react";
 import ThumbsUp from "../Icons/ThumbsUp";
 import ThumsDown from "../Icons/ThumsDown";
 
-const SingleFact = ({ fact, categories }) => {
-  const { categoryId, description, likes, dislikes, source } = fact;
+const SignlePith = ({ pith, categories }) => {
+  const { categoryId, description, likes, dislikes, source } = pith;
   return (
-    <li className="fact">
+    <li className="pith">
       <p>
         <strong>
           {categories.find(category => category.id === categoryId).title}
@@ -30,4 +30,4 @@ const SingleFact = ({ fact, categories }) => {
   );
 };
 
-export default SingleFact;
+export default SignlePith;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SubmitIcon from "../Icons/SubmitIcon";
 import CloseIcon from "../Icons/CloseIcon";
 
-const NewFact = ({ showForm, closeForm, categories }) => {
+const NewPith = ({ showForm, closeForm, categories }) => {
   const [formData, setFormData] = useState({
     description: "",
     source: "",
@@ -33,15 +33,15 @@ const NewFact = ({ showForm, closeForm, categories }) => {
     >
       <div className="modal-content">
         <div className="modal-head">
-          <h2>Share a fact</h2>
+          <h2>Share a Pith</h2>
           <CloseIcon closeModal={closeForm} />
         </div>
-        <form className="fact-form">
-          <div className="fact-section">
+        <form className="pith-form">
+          <div className="pith-section">
             <input
               type="text"
               name="description"
-              placeholder="Share a fact with the world..."
+              placeholder="Share a pith with the world..."
               onChange={handleFormChange}
               value={formData.description}
               maxLength={200}
@@ -75,4 +75,4 @@ const NewFact = ({ showForm, closeForm, categories }) => {
   );
 };
 
-export default NewFact;
+export default NewPith;
