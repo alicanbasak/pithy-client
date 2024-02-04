@@ -1,9 +1,14 @@
 import React from "react";
 import SubmitIcon from "../Icons/SubmitIcon";
 
-const NewFact = () => {
+const NewFact = ({ showForm }) => {
   return (
-    <form className="fact-form">
+    <form
+      className="fact-form"
+      style={{
+        display: showForm ? "flex" : "none",
+      }}
+    >
       <div className="fact-section">
         <input type="text" placeholder="Share a fact with the world..." />
         <span>200</span>
