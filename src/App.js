@@ -58,7 +58,7 @@ function App() {
         status={showForm}
         handleShowForm={handleShowForm}
         categories={categories}
-        title={"Today I Learned"}
+        title={"Pithy"}
       />
       <NewFact
         categories={categories}
